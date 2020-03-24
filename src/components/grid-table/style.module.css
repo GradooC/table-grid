@@ -1,0 +1,224 @@
+.table {
+  --base: 10px;
+  width: 600px;
+  height: 600px;
+  display: grid;
+  grid-template-rows:
+    calc(var(--base) * 4) calc(var(--base) * 3) calc(var(--base) * 4)
+    calc(var(--base) * 9) calc(var(--base) * 3) calc(var(--base) * 6)
+    repeat(6, calc(var(--base) * 3));
+  grid-template-columns:
+    repeat(27, var(--base)) [base1] 
+    repeat(5, var(--base)) [base2] 
+    repeat(20, var(--base));
+}
+
+.text-align {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.without-left-border {
+  border-left: none !important;
+}
+
+.without-right-border {
+  border-right: none !important;
+}
+
+.without-top-border {
+  border-top: none !important;
+}
+
+.table div {
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.amountHeader {
+  composes: without-left-border without-top-border;
+  grid-column: 1 / 8;
+}
+
+.amount {
+  composes: without-right-border without-top-border;
+  grid-column: 8 / -1;
+}
+
+.inn {
+  composes: without-left-border;
+  grid-column: 1 / 15;
+}
+
+.kpp {
+  grid-column: 15 / base1;
+}
+
+.amountHint {
+  composes: without-right-border;
+  grid-column: base2 / -1;
+  grid-row: 2 / 4;
+  padding: var(--base) calc(var(--base) * 2);
+}
+
+.payer {
+  composes: without-left-border;
+  grid-column: 1 / base1;
+  grid-row: 3 / 6;
+}
+
+.payerRequisites1 {
+  composes: without-right-border;
+  grid-column: base2 / -1;
+  grid-row: 4 / 5;
+}
+
+.payerRequisites2 {
+  composes: without-right-border;
+  grid-column: base2 / -1;
+  grid-row: 5 / 6;
+}
+
+.payeeBank {
+  composes: without-left-border;
+  grid-column: 1 / base1;
+  grid-row: 6 / 7;
+}
+
+.payeeInnKpp {
+  composes: without-left-border;
+  grid-column: 1 / base1;
+  grid-row: 7 / 8;
+}
+
+.payeeRequisites {
+  composes: without-right-border;
+  grid-column: base2 / -1;
+  grid-row: 6 / 9;
+}
+
+.payee {
+  composes: without-left-border;
+  grid-column: 1 / base1;
+  grid-row: 8 / 12;
+}
+
+.cell20 {
+  composes: text-align;
+  grid-column: base2 / 38;
+  grid-row: 9 / 12;
+
+}
+
+.blank11 {
+  grid-column: 38 / 45;
+  grid-row: 9 / 10;
+}
+
+.blank12 {
+  grid-column: 38 / 45;
+  grid-row: 10 / 11;
+}
+
+.blank13 {
+  grid-column: 38 / 45;
+  grid-row: 11 / 12;
+}
+
+.blank14 {
+  composes: without-right-border;
+  grid-column: 45 / -1;
+  grid-row: 9 / 12;
+}
+
+.blank15 {
+  composes: without-right-border;
+  grid-column: 49 / -1;
+  grid-row: 12 / 13;
+}
+
+.blank {
+  grid-column: base1 / base2;
+}
+
+.blank2 {
+  grid-column: base1 / base2;
+  grid-row: 3 / 4;
+}
+
+.blank3 {
+  grid-column: base1 / base2;
+  grid-row: 4 / 5;
+}
+
+.blank4 {
+  grid-column: base1 / base2;
+  grid-row: 5 / 6;
+}
+
+.blank5 {
+  grid-column: base1 / base2;
+  grid-row: 6 / 7;
+}
+
+.blank6 {
+  grid-column: base1 / base2;
+  grid-row: 7 / 8;
+}
+
+.blank7 {
+  grid-column: base1 / base2;
+  grid-row: 8 / 9;
+}
+
+.blank8 {
+  grid-column: base1 / base2;
+  grid-row: 9 / 10;
+}
+
+.blank9 {
+  grid-column: base1 / base2;
+  grid-row: 10 / 11;
+}
+
+.blank10 {
+  grid-column: base1 / base2;
+  grid-row: 11 / 12;
+}
+
+.cell104 {
+  composes: text-align without-left-border;
+  grid-column: 1 / 10;
+  grid-row: 12 / 13;
+}
+
+.cell105 {
+  composes: text-align;
+  grid-column: 10 / 17;
+  grid-row: 12 / 13;
+}
+
+.cell106 {
+  composes: text-align;
+  grid-column: 17 / 24;
+  grid-row: 12 / 13;
+}
+
+.cell107 {
+  composes: text-align;
+  grid-column: 24 / 31;
+  grid-row: 12 / 13;
+}
+
+.cell108 {
+  composes: text-align;
+  grid-column: 31 / 41;
+  grid-row: 12 / 13;
+}
+
+.cell109 {
+  composes: text-align;
+  grid-column: 41 / 49;
+  grid-row: 12 / 13;
+}
